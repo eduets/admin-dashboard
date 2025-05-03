@@ -408,6 +408,12 @@ targetheight += parseFloat(window.getComputedStyle(trending).marginTop);
 targetheight += parseFloat(window.getComputedStyle(contentAnnouncementsTitle).paddingBottom);
 targetheight += parseFloat(window.getComputedStyle(projectTitle).marginBottom) * (-1);
 projectsCards.style.height = targetheight + "px";
+/* Keep sidebar background even if cards overflow */
+const sidebarBackground = document.querySelector('.sidebar-background');
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY - 500;
+    sidebarBackground.style.top = `${scrollY}px`;
+});
 </script>
 </body>
 </html>
