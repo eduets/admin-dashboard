@@ -7,50 +7,6 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <div class="sidebar-background">
-        <a href="" class="sidebar-title">
-            <img src="./images/dashboard-icon.svg" alt="">
-            <span>Dashboard</span>
-        </a>
-        <div class="spacer"></div>
-        <a href="">
-            <img src="./images/home.svg" alt="">
-            <span>Home</span>
-        </a>
-        <a href="">
-            <img src="./images/face-man-profile.svg" alt="">
-            <span>Profile</span>
-        </a>
-        <a href="">
-            <img src="./images/message.svg" alt="">
-            <span>Messages</span>
-        </a>
-        <a href="">
-            <img src="./images/history.svg" alt="">
-            <span>History</span>
-        </a>
-        <a href="">
-            <img src="./images/calendar-check.svg" alt="">
-            <span>Tasks</span>
-        </a>
-        <a href="">
-            <img src="./images/account-group.svg" alt="">
-            <span>Communities</span>
-        </a>
-        <div class="spacer"></div>
-        <a href="">
-            <img src="./images/cog.svg" alt="">
-            <span>Settings</span>
-        </a>
-        <a href="">
-            <img src="./images/help-box.svg" alt="">
-            <span>Support</span>
-        </a>
-        <a href="">
-            <img src="./images/shield-check.svg" alt="">
-            <span>Privacy</span>
-        </a>
-    </div>
     <div class="sidebar">
         <a href="" class="sidebar-title">
             <img src="./images/dashboard-icon.svg" alt="">
@@ -407,13 +363,7 @@ targetheight += trending.offsetHeight;
 targetheight += parseFloat(window.getComputedStyle(trending).marginTop);
 targetheight += parseFloat(window.getComputedStyle(contentAnnouncementsTitle).paddingBottom);
 targetheight += parseFloat(window.getComputedStyle(projectTitle).marginBottom) * (-1);
-projectsCards.style.height = targetheight + "px";
-/* Keep sidebar background even if cards overflow */
-const sidebarBackground = document.querySelector('.sidebar-background');
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY - 500;
-    sidebarBackground.style.top = `${scrollY}px`;
-});
+projectsCards.style.gridAutoRows = targetheight/3 + "px"
 </script>
 </body>
 </html>

@@ -50,16 +50,17 @@ body {
     grid-template-columns: auto 1fr;
 }
 
-.sidebar, .sidebar-background {
+.sidebar {
     grid-area: grid-sidebar;
 
     background-color: var(--color-highlight);
     padding: 10px 0;
+    min-height: 100vh;
 
     display: grid;
     align-content: start;
 }
-.sidebar a, .sidebar-background a {
+.sidebar a {
     color: #ffffff;
     text-decoration: none;
     font-size: 1.2rem;
@@ -75,21 +76,21 @@ body {
     grid-template-columns: 40px auto;
     gap: 20px;
 }
-.sidebar img, .sidebar-background img {
+.sidebar img{
     width: auto;
     height: 24px;
     justify-self: right;
 }
-.sidebar a:hover, .sidebar-background a:hover {
+.sidebar a:hover {
     background-color: #1782bb;
 }
-.sidebar .spacer, .sidebar-background .spacer {
+.sidebar .spacer {
     height: 30px;
 }
-.sidebar a.sidebar-title, .sidebar-background a.sidebar-title{
+.sidebar a.sidebar-title{
     font-size: 1.8rem;
 }
-.sidebar a.sidebar-title img, .sidebar-background a.sidebar-title img{
+.sidebar a.sidebar-title img{
     width: auto;
     height: 34px;
     position: relative;
@@ -207,7 +208,7 @@ body {
     grid-area: projects-cards;
 
     display: grid;
-    grid-auto-rows: calc(100%/3);
+    
     grid-template-columns: repeat(auto-fit, minmax(362px, 1fr));
 }
 
@@ -302,17 +303,4 @@ body {
 
 .miscellaneous > div:nth-of-type(2) {
     margin-top: 20px;
-}
-
-/* Keep sidebar background even if cards overflow */
-.sidebar-background {
-    position: absolute;
-    top: -500px;
-    left: 0;
-    min-height: 100%;
-    height: calc(100% + 500px);
-    z-index: -1;
-}
-.sidebar-background a {
-    visibility: hidden;
 }
